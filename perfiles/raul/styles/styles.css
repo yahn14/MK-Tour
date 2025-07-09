@@ -1,0 +1,1083 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0a0a0a;
+  color: #fff;
+  min-height: 100vh;
+  overflow-y: auto;
+  padding: 0; /* sin padding global */
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/*degradado perfiles solo es el cambio para cada uno*/
+
+.perfil-container {
+  position: relative;
+  background: 
+    linear-gradient(
+      135deg, 
+      rgba(255, 255, 255, 0.4),  /* blanco translúcido claro */
+      rgba(200, 200, 200, 0.3)   /* gris claro translúcido */
+    ),
+    url('../../../img/fondo-mii.webp') center/cover no-repeat;
+
+  border-radius: 18px;
+  box-shadow: 0 0 12px #000000cc, 0 0 6px #333 inset;
+  border: 1px solid #2a2a2a;
+  width: 100%;
+  max-width: 100%;
+  height: 95vh;       /* Ocupa el 95% de la ventana */
+  max-height: 1000px; /* No más alto que 1000px */
+  min-height: 720px;  /* Ni menos que 700px */
+  padding: 25px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  align-items: flex-start;
+  overflow: visible;
+  z-index: 1;
+}
+
+
+.perfil-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Imagen y stats */
+
+/* Quitamos cualquier fondo o sección extra alrededor de .perfil-header y .estadisticas */
+/* Solo dejamos el diseño original sin fondo ni padding extra */
+
+/* Solo se añade rotación suave y sombra a la imagen y su borde al pasar cursor */
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid #FF3C3C; /* borde rojo vibrante */
+  box-shadow: 0 0 20px #FF999988, 0 0 10px #FF999944 inset; /* brillo rojo claro */
+  background-color: #000;
+  object-fit: cover;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.05) rotate(-5deg);
+  box-shadow: 0 0 40px #ffffffcc, 0 0 18px #ffffff88 inset; /* brillo blanco en hover */
+}
+
+
+.info-jugador h1 {
+  font-size: 2.5em;
+  margin: 0;
+  color: #f5f5f5;
+  text-shadow: 2px 2px 4px #000;
+  text-align: center;
+}
+
+.frase {
+  font-style: italic;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  color: white;
+  text-align: center;
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
+}
+
+
+.estadisticas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  /* Sin fondo ni padding extra */
+  width: 100%;
+  max-width: 230px;
+  margin: 0 auto;
+  margin-top: 60px; /* Espacio hacia abajo */
+  background-color: rgba(0, 0, 0, 0.6);    /*Color de Fondo de las estadisticas*/
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00000088 inset;
+}
+
+.estadisticas div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1em;
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.estadisticas div:last-child {
+  border-bottom: none;
+}
+
+/* Trofeos y medallas */
+.premios-container {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  height: 100%;
+  overflow: visible;
+  padding-left: 40px;
+}
+
+.galeria h2 {
+  color: #ffcc00;
+  text-shadow: 1px 1px 3px black;
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+
+/* TROFEOS */
+.trofeos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 120px);
+  grid-template-rows: repeat(3, 200px);
+  gap: 25px 20px;
+  justify-content: center;
+}
+
+.trofeo-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.trofeo-placeholder {
+  width: 120px;
+  height: 200px;
+  border-radius: 15px;
+  border: 3px solid #ffc107; /* dorado profesional metálico */
+  background: #000; /* negro sólido */
+  box-shadow: 0 0 15px #ffeb3b66, inset 0 0 6px #ffd54f88;
+  cursor: default;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.trofeo-placeholder:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #FFD700aa;
+}
+
+.trofeo-box span {
+  margin-top: 8px;
+  font-size: 1em;
+  color: #FFD700;
+  text-shadow: 1px 1px 3px #000;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* MEDALLAS */
+.medallas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: auto auto;
+  row-gap: 40px;
+  column-gap: 20px;
+  justify-content: center;
+  width: max-content;
+}
+
+.medalla-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.medalla-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #e0e0e0; /* Plata más clara */
+  background: #000;
+  box-shadow:
+    0 0 14px #ffffffaa,       /* brillo blanco exterior */
+    0 0 6px #dcdcdc99 inset,  /* brillo interior suave */
+    0 0 4px #f8f8f855;        /* capa adicional de brillo plateado */
+cursor: default;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* 🔧 Añade esto */
+}
+
+
+
+.medalla-placeholder:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 18px #C0C0C088;
+}
+
+.medalla-box span {
+  margin-top: 8px;
+  font-size: 1em;
+  color: #C0C0C0;
+  text-shadow: 1px 1px 3px #000;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+
+
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f0f0f0;
+}
+
+
+
+.contenido-principal {
+  margin-left: 300px;
+  min-height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: transparent;
+  backdrop-filter: none;
+}
+
+.menu-lateral {
+  background: linear-gradient(180deg, #b5000b 0%, #e50914 60%, #a10008 100%);
+  box-shadow: 4px 0 20px rgba(165, 0, 0, 0.9);
+  padding: 30px 20px;
+  width: 300px;
+  height: 90vh;       /* Ocupa el 90% de la altura visible */
+  max-height: 800px;  /* Pero no más de 800px */
+  min-height: 760px;  /* Ni menos de 600px */
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: visible; 
+  z-index: 10;
+}
+
+.menu-lateral h2 {
+  color: #fff;
+  text-shadow: 0 0 10px #a5000acc;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.menu-lateral a {
+  color: #f5f5f5;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.menu-lateral a:hover {
+  background-color: #8b0000;
+  color: #fff;
+  box-shadow: 0 0 10px #8b0000cc;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120vw;
+  height: 120vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(3px);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #1e1e1e, #2b2b2b);
+  border: 2px solid #e50914;
+  border-radius: 15px;
+  padding: 30px;
+  width: 90%;
+  max-width: 700px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 20px #e50914aa;
+  position: relative;
+}
+
+.modal-content h2 {
+  color: #ff4d4d;
+  margin-bottom: 20px;
+}
+
+.opciones-torneo {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.tipo-torneo {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.tipo-torneo img {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 0 10px #e50914aa;
+}
+
+.tipo-torneo:hover {
+  transform: scale(1.1);
+}
+
+.tipo-torneo p {
+  margin-top: 8px;
+  font-weight: 600;
+  color: #ffaaaa;
+}
+
+.catalogo {
+  margin-top: 30px;
+  animation: fadeIn 0.5s ease;
+}
+
+.catalogo h3 {
+  margin-bottom: 15px;
+  color: #ff4d4d;
+  text-shadow: 0 0 6px #ff4d4d88;
+}
+
+.grid-catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  justify-items: center;
+}
+
+.grid-catalogo .item {
+  text-align: center;
+  cursor: pointer;
+}
+
+.grid-catalogo img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  background-color: #111;
+  border-radius: 10px;
+  padding: 8px;
+  border: 2px solid transparent;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.grid-catalogo img:hover {
+  transform: scale(1.1);
+ 
+}
+
+.grid-catalogo p {
+  margin-top: 5px;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+
+
+/* Estilo base para todas las imágenes del modal de perfiles */
+.perfil-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+  padding: 6px;
+  background-color: #000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* iluinacion Borde individual por jugador */
+.borde-carlos   { border: 3px solid #228B22; box-shadow: 0 0 10px #7CFC00aa; } /* verde */
+.borde-cris     { border: 3px solid #2196f3; box-shadow: 0 0 10px #2196f3aa; } /* azul */
+.borde-hector   { border: 3px solid #FFA500; box-shadow: 0 0 10px #FFD700aa; } /* naranja*/
+.borde-manuel   { border: 3px solid #ff2a2a; box-shadow: 0 0 10px #ff2a2acc; } /* rojo */
+.borde-ricardo  { border: 3px solid #9c27b0; box-shadow: 0 0 10px #9c27b0aa; } /* púrpura */
+.borde-pablo    { border: 3px solid #8B4513; box-shadow: 0 0 10px #A0522Daa; } /* cafe */
+.borde-raul     { border: 3px solid #607D8B; box-shadow: 0 0 10px #B0BEC5aa; } /* mii */
+.borde-yahir    { border: 3px solid #00bcd4; box-shadow: 0 0 10px #00bcd4aa; } /* cian */
+
+
+
+ Borde individual por jugador */
+.borde-carlos:hover   { border-color: #228B22; box-shadow: 0 0 15px #7CFC00aa; }
+.borde-cris:hover     { border-color: #2196f3; box-shadow: 0 0 15px #2196f3cc; }
+.borde-hector:hover   { border-color: #FFA500; box-shadow: 0 0 15px #FFD700aa; }
+.borde-manuel:hover   { border-color: #ff2a2a; box-shadow: 0 0 15px #ff2a2acc; }
+.borde-ricardo:hover  { border-color: #9c27b0; box-shadow: 0 0 15px #9c27b0cc; }
+.borde-pablo:hover    { border-color: #8B4513; box-shadow: 0 0 15px #A0522Daa; }
+.borde-raul:hover     { border-color: #607D8B; box-shadow: 0 0 15px #B0BEC5aa; }
+.borde-yahir:hover    { border-color: #00bcd4; box-shadow: 0 0 15px #00bcd4cc; }
+
+catalogo .item img {
+  border: 4px solid transparent;
+  transition: border 0.3s ease, transform 0.3s ease;
+}
+
+.catalogo .item img:hover {
+  border: 4px solid #f39c12;
+  transform: scale(1.07);
+  box-shadow: 0 0 15px 5px #f1c40f;
+}
+.catalogo .item img {
+  border: 4px solid transparent;
+  transition: border 0.3s ease, transform 0.3s ease;
+}
+
+.catalogo .item img:hover {
+  border: 4px solid #f39c12;
+  transform: scale(1.07);
+  box-shadow: 0 0 15px 5px #f1c40f;
+}
+
+
+.catalogo .item img:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  transform: translateY(-5px) scale(1.05);
+  transition: all 0.3s ease;
+}
+
+
+
+
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 900px) {
+  .perfil-container {
+    flex-direction: column;
+    height: auto;
+    max-height: none;
+    padding: 15px;
+    gap: 30px;
+  }
+
+ .perfil-header {
+  flex: none;
+  width: 100%;
+  align-items: center;
+  background: none;
+  padding-left: 25px; /* <<< Mueve todo a la derecha */
+}
+
+
+  .avatar {
+    width: 150px;
+    height: 150px;
+  }
+
+  .info-jugador h1 {
+    font-size: 2em;
+  }
+
+  .estadisticas {
+    max-width: 100%;
+    margin-top: 40px;
+    width: 100%;
+  }
+
+  .premios-container {
+    flex-direction: column;
+    gap: 40px;
+    padding-left: 0;
+    height: auto;
+  }
+
+  .trofeos-grid {
+    grid-template-columns: repeat(2, 100px);
+    grid-template-rows: repeat(3, 150px);
+    gap: 20px 15px;
+  }
+
+  .medallas-grid {
+    grid-template-columns: repeat(3, 80px);
+    row-gap: 30px;
+    column-gap: 15px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .trofeo-placeholder {
+    width: 100px;
+    height: 150px;
+  }
+
+  .medalla-placeholder {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    padding: 10px;
+  }
+
+  .avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .info-jugador h1 {
+    font-size: 1.5em;
+  }
+
+  .trofeos-grid {
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: auto;
+    gap: 15px;
+  }
+
+  .trofeo-placeholder {
+    width: 100%;
+    height: 150px;
+  }
+
+  .medallas-grid {
+    grid-template-columns: repeat(2, 80px);
+    row-gap: 25px;
+    column-gap: 15px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .medalla-placeholder {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+
+/* Añadir fondo negro transparente a las secciones de trofeos y medallas */
+.trofeos-section, 
+.medallas-section {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+
+
+
+
+#modalPerfiles .modal-content h2 {
+  color: #ffcc00; /* dorado suave */
+  text-shadow: 0 0 8px #000000cc;
+}
+
+#modalPerfiles .grid-catalogo p {
+  color: #cccccc;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-shadow: 1px 1px 2px #000;
+}
+
+
+
+#catalogoTrofeos .grid-catalogo .item img:hover {
+  border-color: gold;
+  box-shadow: 0 0 15px gold;
+}
+
+#catalogoMedallas .grid-catalogo .item img:hover {
+  border-color: #00bfff;
+  box-shadow: 0 0 15px #00bfff;
+}
+
+
+
+
+
+.
+
+
+/*AQUI SOLO ES CAMBIAR EN EL HTML MEDALLAS NORMALES POR ESPECIALES PARA QUE LAS QUE QUEIRA MAS A FUTURO LAS PUEDA COLOCAR*/
+
+.medalla-placeholder {
+  border: 3px solid #c0c0c0; /* ⚪ Plata brillante */
+  background: #000;
+  box-shadow: 0 0 10px #c0c0c055, inset 0 0 4px #c0c0c033;
+}
+
+
+/* Borde para medallas especiales */
+.medalla-especial {
+  border: 3px solid #ff4d4d; /* Rojo más vivo */
+  box-shadow:
+    0 0 16px #ff1a1a99,      /* brillo exterior fuerte */
+    0 0 8px #ff666688 inset, /* luz interior */
+    0 0 4px #ff000088;       /* capa extra de brillo rojo */
+}
+
+
+
+
+#modalPerfiles .modal-content {
+  background: linear-gradient(135deg, #000000, #1a1a1a, #0d0d0d, #000000);
+  border: 2px solid #e50914;
+  box-shadow:
+    0 0 8px #000000cc, /* brillo negro suave alrededor */
+    0 0 30px #e50914cc; /* brillo rojo intenso */
+  color: #e0e0e0;
+}
+
+
+#modalPerfiles .modal-content h2 {
+  color: #ffcc00; /* dorado suave */
+  text-shadow: 0 0 8px #000000cc;
+}
+
+#modalPerfiles .modal-content {
+  background-image: url('../../../img/speed.avif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+
+}
+
+
+
+
+
+
+
+#modalCrearTorneoContent {
+  background-image: url('../../../img/q.avif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+}
+
+
+
+
+
+
+.btn-cerrar-modal {
+  background: linear-gradient(135deg, #a70000, #e60000);
+  color: white;
+  padding: 12px 24px;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  margin: 30px auto 0;
+  display: block;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff4d4dcc;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-cerrar-modal:hover {
+  background: linear-gradient(135deg, #ff1a1a, #cc0000);
+  transform: scale(1.05);
+}
+
+
+.premio-reciente-container {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.premio-reciente-container img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border: 3px solid gold;
+  border-radius: 10px;
+  box-shadow: 0 0 12px gold;
+}
+
+
+
+
+#trofeosSection > h2 {
+  margin-bottom: 5px; /* reduce el espacio bajo el título */
+}
+
+#trofeosSection .trofeos-grid {
+  margin-top: 0; /* elimina cualquier margen extra arriba */
+  gap: 15px 20px; /* ajusta gap vertical (fila) y horizontal (col) */
+}
+
+
+#contenedorTrofeoEstrella {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* evita que algo se salga */
+  position: relative; /* por si quieres mover imagen absoluto */
+}
+
+#contenedorTrofeoEstrella img {
+  position: relative; /* para poder mover con top, left */
+  width: auto !important;   /* deja que el ancho sea automático */
+  height: 120px !important;
+  object-fit: contain;
+  margin: 0;        /* sin márgenes que desajusten */
+  top: 0;           /* mueve verticalmente */
+  left: 0;          /* mueve horizontalmente */
+}
+
+
+#contenedorTrofeoCaparazon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+#contenedorTrofeoCaparazon img {
+  position: relative;
+  width: auto !important;
+  height: 120px !important;
+  object-fit: contain;
+  margin: 0;
+  top: 0;
+  left: 0;
+}
+
+
+#contenedorTrofeoMK {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+#contenedorTrofeoMK img {
+  position: relative;
+  width: auto !important;
+  height: 120px !important;
+  object-fit: contain;
+  margin: 0;
+  top: 0;
+  left: 0;
+}
+
+
+#contenedorTrofeoRace {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+#contenedorTrofeoRace img {
+  position: relative;
+  width: auto !important;
+  height: 120px !important;
+  object-fit: contain;
+  margin: 0;
+  top: 0;
+  left: 0;
+}
+
+
+
+#zoom-wrapper {
+  transform: scale(1.2);
+  transform-origin: top left;
+  width: 83.5%;
+}
+
+
+
+
+
+
+
+.menu-lateral a {
+  font-size: 1.4rem; /* un poco más grande */
+  color: #f5f5f5;
+  padding: 16px 20px; /* más espacio vertical */
+  border-radius: 10px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+/* Fondo sutil oscuro incluso sin hover */
+.menu-lateral a {
+  background-color: rgba(0,0,0,0.2); /* tono negro suave */
+}
+
+/* Resalte en rojo oscuro al pasar cursor */
+.menu-lateral a:hover {
+  background-color: #8b0000;
+  box-shadow: 0 0 10px #8b0000cc;
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* BONUS: Estilo específico si insertas medallas dinámicamente */
+.medalla-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 3px solid #00bcd4;
+  box-shadow: 0 0 12px #00e5ff66, inset 0 0 6px #26c6da88;
+}
+
+
+
+
+
+
+.contador-trofeo {
+  position: absolute;
+  bottom: 6px;
+  right: 10px;
+  background: linear-gradient(145deg, #f0f0f0, #c0c0c0, #a0a0a0); /* Degradado plata brillante */
+  color: #1a1a1a !important;; /* Gris oscuro para buen contraste */
+  font-weight: bold;
+  padding: 2px 5px;
+  font-size: 0.5rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2), 0 1px 3px rgba(0, 0, 0, 0.5); /* Sombra interna/externa */
+  border: 1px solid #aaa;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6); /* Simula reflejo sutil */
+}
+
+
+
+
+.contador-medalla {
+  position: absolute;
+  bottom: 6px;
+  right: 10px;
+  background: linear-gradient(145deg, #f0f0f0, #c0c0c0, #a0a0a0); /* Degradado plata brillante */
+  color: #1a1a1a !important;
+  font-weight: bold;
+  padding: 2px 5px;
+  font-size: 0.5rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2), 0 1px 3px rgba(0, 0, 0, 0.5); /* Sombra interna/externa */
+  border: 1px solid #aaa;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6); /* Simula reflejo sutil */
+}
+
+
+
+.medalla-placeholder img {
+  position: relative;
+  width: auto !important;
+  height: 80px !important;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+/* Texto dentro de cada trofeo y medalla en blanco */
+.trofeo-box span,
+.medalla-box span {
+  color: #fff !important;
+}
+
+#modalCrearTorneoContent h2 {
+  color: #ffcc00; /* amarillo dorado */
+  text-shadow: 0 0 8px #000000cc;
+}
+
+
+#modalCrearTorneoContent .grid-catalogo p {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-shadow: 1px 1px 2px #000;
+}
+
+
+
+/* Anula el borde azul de las medallas dinámicas */
+.medalla-img {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+
+
+
+/* Ajusta la medalla para que ocupe TODO el placeholder sin desbordarse */
+.medalla-placeholder img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;    /* o "cover" si prefieres recortarla para cubrir todo */
+  display: block;
+}
+
+
+
+
+.medalla-placeholder img {
+  width: 125%;
+  height: 125%;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  box-shadow: none;
+  transform: scale(1.1); /* escala manual adicional */
+}
+
+
+
+
+.img-con-contador {
+  position: relative;
+  display: inline-block;
+}
+
+.contador.contador-medalla {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #000; /* texto negro */
+  background: linear-gradient(135deg, #f0f0f0, #c0c0c0, #e0e0e0); /* degradado plata */
+  border-radius: 6px;
+  border: 1.5px solid #000; /* borde negro */
+  box-shadow:
+    0 0 8px #000,       /* brillo negro */
+    inset 0 0 4px #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  text-align: center;
+  aspect-ratio: 1 / 1;
+  z-index: 10;
+}
+
+
+#zoom-wrapper {
+  transform-origin: top left;
+}
+
+/* Para pantallas grandes: aplicar escala de 1.25 (como zoom al 125%) */
+@media (min-width: 1600px) {
+  #zoom-wrapper {
+    transform: scale(1.25);
+    width: calc(100% / 1.25);
+  }
+}
+
+/* Para pantallas medianas: dejar en 100% */
+@media (min-width: 1100px) and (max-width: 1599px) {
+  #zoom-wrapper {
+    transform: scale(1);
+    width: 100%;
+  }
+}
+
+/* Para pantallas pequeñas: aplicar escala de 0.8 (como zoom al 80%) */
+@media (max-width: 1099px) {
+  #zoom-wrapper {
+    transform: scale(0.8);
+    width: calc(100% / 0.8);
+  }
+}
+
+.imagen-flotante {
+  position: absolute;
+  top: 400px;
+  left: 80px;
+  z-index: 9999;
+
+}
+
+.imagen-flotante {
+  right: 20px;
+  left: auto; /* o quitar left para que no haya conflicto */
+}
+
+

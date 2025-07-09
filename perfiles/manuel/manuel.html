@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mario Kart Torneo</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+<div id="zoom-wrapper">
+<nav class="menu-lateral">
+  <h2>Mario Kart Menu</h2>
+  <ul>
+    <a href="../../index.html">🏟️ Inicio</a>
+    <a href="perfil.html">👤 Perfiles</a>
+    <a href="../../podio/podio.html">🏆 Podio</a>
+  </ul>
+
+  <div class="imagen-flotante">
+  <img src="../../img/flor-fuego.png" alt="Banner" style="width:220px; height:auto;" />
+
+</div>
+
+</nav>
+
+<div class="contenido-principal">
+  <div class="perfil-container">
+    <!-- Foto y estadísticas -->
+    <div class="perfil-header">
+      <img src="../../img/mario.png" alt="Avatar del jugador" class="avatar" />
+      <div class="info-jugador">
+        <h1>Manuel</h1>
+        <p class="frase">"¡Hijos de su puta madre!"</p>
+
+        <div class="estadisticas">
+          <div><strong>🏆 Campeonatos:</strong> <span id="totalTrofeos">0</span></div>  
+          <div><strong>🏍️ Medallas:</strong> <span id="totalMedallas">0</span></div>
+          <div><strong>🥇 Récord Máximo:</strong> <span id="recordMaximo">0</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trofeos y Medallas lado a lado -->
+    <div class="premios-container">
+      <!-- TROFEOS -->
+      <section class="galeria" id="trofeosSection">
+        <h2>Trofeos</h2>
+        <div id="premioReciente" class="premio-reciente-container"></div>
+        <div class="trofeos-grid">
+          <div class="trofeo-box bloqueado" id="trofeoEstrella">
+            <div class="trofeo-placeholder" id="contenedorTrofeoEstrella"></div>
+            <span>Copa Azul </span>
+          </div>
+          <div class="trofeo-box bloqueado" id="trofeoCaparazon">
+            <div class="trofeo-placeholder" id="contenedorTrofeoCaparazon"></div>
+            <span>Copa Tortuga</span>
+          </div>
+          <div class="trofeo-box bloqueado" id="trofeoMK">
+            <div class="trofeo-placeholder" id="contenedorTrofeoMK"></div>
+            <span>Copa MK</span>
+          </div>
+          <div class="trofeo-box bloqueado" id="trofeoRace">
+            <div class="trofeo-placeholder" id="contenedorTrofeoRace"></div>
+            <span>Copa Race</span>
+          </div>
+          <div class="trofeo-box bloqueado">
+            <div class="trofeo-placeholder"></div>
+            <span>Copa MK</span>
+          </div>
+          <div class="trofeo-box bloqueado">
+            <div class="trofeo-placeholder"></div>
+            <span>Copa Fantasma</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Medallas -->
+      <section class="galeria medallas-section" id="medallasSection">
+        <h2>Medallas</h2>
+        <div class="medallas-grid">
+          <div class="medalla-box bloqueado" id="medallaChampiñon">
+            <div class="medalla-placeholder medalla-normal" id="contenedorMedallaChampiñon"></div>
+            <span>Champiñón</span>
+          </div>
+          <div class="medalla-box bloqueado" id="medallaEstrella">
+            <div class="medalla-placeholder medalla-normal" id="contenedorMedallaEstrella"></div>
+            <span>Estrella</span>
+          </div>
+          <div class="medalla-box bloqueado" id="medallaFlor">
+            <div class="medalla-placeholder medalla-normal" id="contenedorMedallaFlor"></div>
+            <span>Flor</span>
+          </div>
+          <div class="medalla-box bloqueado" id="medallaHoja">
+            <div class="medalla-placeholder medalla-normal" id="contenedorMedallaHoja"></div>
+            <span>Hoja</span>
+          </div>
+          <div class="medalla-box bloqueado" id="medallaCorona">
+            <div class="medalla-placeholder medalla-normal" id="contenedorMedallaCorona"></div>
+            <span> Corona</span>
+          </div>
+          <div class="medalla-box bloqueado" id="medallaChampiñonEspecial">
+            <div class="medalla-placeholder medalla-especial" id="contenedorMedallaChampiñonEspecial"></div>
+            <span>Especial</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- MODALES FUERA DEL ZOOM-WRAPPER -->
+
+<!-- Modal Crear Torneo -->
+<div id="modalCrearTorneo" class="modal">
+  <div class="modal-content" id="modalCrearTorneoContent">
+    <h2>Selecciona el tipo de torneo</h2>
+    <div class="opciones-torneo">
+      <div class="tipo-torneo" id="btnVerTrofeos">
+        <img src="../../img/trofeos.webp" alt="Trofeos" />
+        <p>Trofeos</p>
+      </div>
+      <div class="tipo-torneo" id="btnVerMedallas">
+        <img src="../../img/medallas-cup.jpeg" alt="Medallas" />
+        <p>Medallas</p>
+      </div>
+    </div>
+
+    <!-- Catálogo Trofeos -->
+    <div id="catalogoTrofeos" class="catalogo hidden">
+      <h3>Selecciona un Trofeo</h3>
+      <div class="grid-catalogo">
+        <div class="item">
+          <img src="../../img/trofeos/copa-azul.png" data-tipo="trofeo" alt="Trofeo Azul" />
+          <p>Trofeo Azul</p>
+        </div>
+        <div class="item">
+          <img src="../../img/trofeos/copa-caparazon.png" data-tipo="trofeo" alt="Trofeo Caparazón" />
+          <p>Trofeo Caparazón</p>
+        </div>
+        <div class="item">
+          <img src="../../img/trofeos/copa-m.png" data-tipo="trofeo" alt="Trofeo MK" />
+          <p>Trofeo MK</p>
+        </div>
+        <div class="item">
+          <img src="../../img/trofeos/copa-race.png" data-tipo="trofeo" alt="Trofeo Race" />
+          <p>Trofeo Race</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Catálogo Medallas -->
+    <div id="catalogoMedallas" class="catalogo hidden">
+      <h3>Selecciona una Medalla</h3>
+      <div class="grid-catalogo">
+        <div class="item">
+          <img src="../../img/relampago/champiñon.png" data-tipo="medalla" alt="Champiñón" />
+          <p>Champiñón</p>
+        </div>
+        <div class="item">
+          <img src="../../img/relampago/estrella.png" data-tipo="medalla" alt="Estrella" />
+          <p>Estrella</p>
+        </div>
+        <div class="item">
+          <img src="../../img/relampago/flor.png" data-tipo="medalla" alt="Flor" />
+          <p>Flor</p>
+        </div>
+        <div class="item">
+          <img src="../../img/relampago/hoja.png" data-tipo="medalla" alt="Hoja" />
+          <p>Hoja</p>
+        </div>
+        <div class="item">
+          <img src="../../img/relampago/corona.png" data-tipo="medalla" alt="Corona" />
+          <p>Corona</p>
+        </div>
+        <div class="item">
+          <img src="../../img/relampago/champiñon-especial.png" data-tipo="medalla" alt="Medalla Especial" />
+          <p>Medalla Especial</p>
+        </div>
+      </div>
+    </div>
+    <button id="cerrarModalCrear" class="btn-cerrar-modal">Cerrar</button>
+  </div>
+</div>
+
+<!-- Modal Perfiles -->
+<div id="modalPerfiles" class="modal">
+  <div class="modal-content">
+    <h2>Selecciona un Jugador</h2>
+    <div class="grid-catalogo">
+      <div class="item">
+        <a href="../carlos/carlos.html"><img src="../../img/flor-.png" alt="Carlos" class="perfil-img borde-carlos" /><p>Carlos</p></a>
+      </div>
+      <div class="item">
+        <a href="../cris/cris.html"><img src="../../img/toad.png" alt="Cris" class="perfil-img borde-cris" /><p>Cris</p></a>
+      </div>
+      <div class="item">
+        <a href="../hector/hector.html"><img src="../../img/bowser-.png" alt="Hector" class="perfil-img borde-hector" /><p>Hector</p></a>
+      </div>
+      <div class="item">
+        <a href="../manuel/manuel.html"><img src="../../img/mario.png" alt="Manuel" class="perfil-img borde-manuel" /><p>Manuel</p></a>
+      </div>
+      <div class="item">
+        <a href="../ricardo/ricardo.html"><img src="../../img/avatar-ricardo.png" alt="Ricardo" class="perfil-img borde-ricardo" /><p>Ricardo</p></a>
+      </div>
+      <div class="item">
+        <a href="../pablo/pablo.html"><img src="../../img/dk-.png" alt="Pablo" class="perfil-img borde-pablo" /><p>Pablo</p></a>
+      </div>
+      <div class="item">
+        <a href="../raul/raul.html"><img src="../../img/mi-.png" alt="Raul" class="perfil-img borde-raul" /><p>Raul</p></a>
+      </div>
+      <div class="item">
+        <a href="../yahir/yahir.html"><img src="../../img/yoshi.png" alt="Yahir" class="perfil-img borde-yahir" /><p>Yahir</p></a>
+      </div>
+    </div>
+    <button id="cerrarModalPerfiles" class="btn-cerrar-modal">Cerrar</button>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="js/modal-torneo.js"></script>
+ </div>
+</body>
+</html>

@@ -1,0 +1,1312 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f0f0f0;
+}
+
+body, html {
+  height: 100%;
+  background: #111;
+  overflow-x: hidden;
+}
+
+.contenido-principal {
+  margin-left: 300px;
+  min-height: 100vh;
+  background: url('../img/5.webp') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 20px 40px;
+  overflow-y: auto;
+  background-color: transparent;
+  backdrop-filter: none;
+}
+
+/* ...estilos existentes... */
+
+.menu-lateral {
+  /* estilos actuales */
+  background: linear-gradient(180deg, #b5000b 0%, #e50914 60%, #a10008 100%);
+  box-shadow: 4px 0 20px rgba(165, 0, 0, 0.9);
+  padding: 30px 20px;
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 10;
+
+  /* Nuevo espaciado */
+  padding-top: 60px;
+}
+
+.menu-lateral h2 {
+  color: #fff;
+  text-shadow: 0 0 10px #a5000acc;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 25px;
+
+  /* Nuevo espaciado extra */
+  margin-bottom: 30px;
+}
+
+/* ...resto de estilos... */
+
+.menu-lateral a {
+  font-size: 1.4rem; /* un poco más grande */
+  color: #f5f5f5;
+  padding: 16px 20px; /* más espacio vertical */
+  border-radius: 10px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+/* Fondo sutil oscuro incluso sin hover */
+.menu-lateral a {
+  background-color: rgba(0,0,0,0.2); /* tono negro suave */
+}
+
+/* Resalte en rojo oscuro al pasar cursor */
+.menu-lateral a:hover {
+  background-color: #8b0000;
+  box-shadow: 0 0 10px #8b0000cc;
+  color: #fff;
+}
+
+.header-torneo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+  text-shadow: 0 0 10px #ff2400cc;
+}
+
+.campeones-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.card-campeon {
+  flex: 1;
+  background: rgba(17, 17, 17, 0.75);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 15px #ff240033;
+  font-weight: 700;
+  font-size: 1.2rem;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffa07a;
+  user-select: none;
+}
+
+.principal-row {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tabla-posiciones {
+  flex: 1 1 600px;
+  background: rgba(0, 0, 0, 0.75); /* negro translúcido */
+  border-radius: 16px;
+  padding: 20px;
+  border: 2px solid #e50914; /* rojo estilo Nintendo */
+  box-shadow: 0 0 25px rgba(255, 36, 0, 0.3); /* leve sombra roja */
+  backdrop-filter: blur(3px);
+  color: #f5f5f5;
+  transition: all 0.3s ease-in-out;
+}
+
+.tabla-posiciones h2 {
+  color: white;
+  font-weight: 900;
+  font-size: 1.6rem;
+  -webkit-text-stroke: 0.8px black;
+  text-stroke: 0.8px black;
+  text-shadow: none;
+  margin-bottom: 20px;
+  text-align: center; /* 👈 Esto centra el título */
+}
+
+.tabla-posiciones table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.tabla-posiciones th,
+.tabla-posiciones td {
+  padding: 12px 10px;
+  text-align: center;
+  border-bottom: 1px solid rgba(80, 80, 100, 0.3);
+  color: #eee;
+}
+
+.tabla-posiciones th {
+  border-bottom: 2px solid #e50914; /* igual al menú */
+  color: #ffffff; /* blanco puro */
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.tabla-posiciones tr:nth-child(even) {
+  background: rgba(40, 45, 65, 0.3);
+}
+
+.trofeo-actual {
+  width: 280px;
+  height: 340px;
+  background: rgba(15, 15, 20, 0.9); /* fondo oscuro y transparente */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 25px rgba(50, 60, 90, 0.8); /* sombra azul oscuro */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.trofeo-activo {
+  box-shadow: 0 0 35px #ff2400cc, 0 0 10px #ff4500cc;
+  transform: scale(1.02);
+}
+
+
+.trofeo-actual img {
+  max-width: 100%;
+  border-radius: 8px;
+  
+  
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.trofeo-activo {
+  box-shadow: 0 0 20px #e50914cc; /* brillo rojo sutil */
+  transform: scale(1.03);
+  border: 3px solid #e50914; /* borde igual tabla de posiciones */
+   background-color: rgba(0, 0, 0, 0.85); /* fondo más oscuro, transparente */
+}
+
+
+/* Nombre trofeo - texto claro y sombra sutil */
+.nombre-trofeo {
+  font-size: 1rem;
+  color: #cce0ff;
+  margin-top: 10px;
+  text-shadow: 0 0 6px #33558899;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* Reducir altura vertical de filas: menos padding, texto un poco más pequeño */
+.tabla-posiciones tbody td,
+.tabla-posiciones thead th {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 0.95rem; /* ligeramente más pequeño para menos altura */
+}
+
+/* Opcional: si quieres reducir aún más la altura sin afectar mucho la legibilidad */
+.tabla-posiciones tbody tr {
+  line-height: 1.2;
+}
+
+
+
+
+
+.contenido-principal::-webkit-scrollbar {
+  width: 10px;
+}
+
+.contenido-principal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.contenido-principal::-webkit-scrollbar-thumb {
+  background-color: #ff2400cc;
+  border-radius: 5px;
+}
+
+
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 120vh;       /* un poco más que el viewport */
+  min-height: 120vh;   /* asegurar altura mínima */
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(3px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  overflow: hidden;
+  z-index: 999;
+}
+
+
+.modal-content {
+  border: 2px solid #e50914;
+  border-radius: 15px;
+  padding: 30px;
+  width: 150%;
+  max-width: 600px;       /* Ancho máximo del modal */
+  max-height: 85vh;       /* Altura máxima visible */
+  overflow-y: auto;       /* Scroll interno si hay mucho contenido */
+  background-color: #111; /* Fondo interno (opcional, si lo usas) */
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 20px #e50914aa;
+  position: relative;
+}
+
+
+
+.modal-content h2 {
+  color: #ffcc00; /* dorado suave */
+  text-shadow: 0 0 8px #000000cc;
+  margin-bottom: 20px;
+}
+
+.opciones-torneo {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.tipo-torneo {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.tipo-torneo img {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 0 10px #e50914aa;
+}
+
+.tipo-torneo:hover {
+  transform: scale(1.1);
+}
+
+.tipo-torneo p {
+  margin-top: 8px;
+  font-weight: 600;
+  color: #ffaaaa;
+}
+
+.catalogo {
+  margin-top: 30px;
+  animation: fadeIn 0.5s ease;
+}
+
+.catalogo h3 {
+  margin-bottom: 15px;
+  color: #ff4d4d;
+  text-shadow: 0 0 6px #ff4d4d88;
+}
+
+.grid-catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  justify-items: center;
+}
+
+.grid-catalogo .item {
+  text-align: center;
+  cursor: pointer;
+}
+
+.grid-catalogo img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  background-color: #111;
+  border-radius: 10px;
+  padding: 8px;
+  border: 2px solid transparent;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.grid-catalogo img:hover {
+  transform: scale(1.1);
+  
+}
+
+.grid-catalogo p {
+  margin-top: 5px;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+/* Estilo base para todas las imágenes del modal de perfiles */
+.perfil-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+  padding: 6px;
+  background-color: #000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* iluinacion Borde individual por jugador */
+.borde-carlos   { border: 3px solid #228B22; box-shadow: 0 0 10px #7CFC00aa; } /* verde */
+.borde-cris     { border: 3px solid #2196f3; box-shadow: 0 0 10px #2196f3aa; } /* azul */
+.borde-hector   { border: 3px solid #FFA500; box-shadow: 0 0 10px #FFD700aa; } /* naranja*/
+.borde-manuel   { border: 3px solid #ff2a2a; box-shadow: 0 0 10px #ff2a2acc; } /* rojo */
+.borde-ricardo  { border: 3px solid #9c27b0; box-shadow: 0 0 10px #9c27b0aa; } /* púrpura */
+.borde-pablo    { border: 3px solid #8B4513; box-shadow: 0 0 10px #A0522Daa; } /* cafe */
+.borde-raul     { border: 3px solid #607D8B; box-shadow: 0 0 10px #B0BEC5aa; } /* mii */
+.borde-yahir    { border: 3px solid #00bcd4; box-shadow: 0 0 10px #00bcd4aa; } /* cian */
+
+
+
+ Borde individual por jugador */
+.borde-carlos:hover   { border-color: #228B22; box-shadow: 0 0 15px #7CFC00aa; }
+.borde-cris:hover     { border-color: #2196f3; box-shadow: 0 0 15px #2196f3cc; }
+.borde-hector:hover   { border-color: #FFA500; box-shadow: 0 0 15px #FFD700aa; }
+.borde-manuel:hover   { border-color: #ff2a2a; box-shadow: 0 0 15px #ff2a2acc; }
+.borde-ricardo:hover  { border-color: #9c27b0; box-shadow: 0 0 15px #9c27b0cc; }
+.borde-pablo:hover    { border-color: #8B4513; box-shadow: 0 0 15px #A0522Daa; }
+.borde-raul:hover     { border-color: #607D8B; box-shadow: 0 0 15px #B0BEC5aa; }
+.borde-yahir:hover    { border-color: #00bcd4; box-shadow: 0 0 15px #00bcd4cc; }
+
+
+
+#modalPerfiles .modal-content h2 {
+  color: #ffcc00; /* dorado suave */
+  text-shadow: 0 0 8px #000000cc;
+}
+
+#modalPerfiles .grid-catalogo p {
+  color: #cccccc;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-shadow: 1px 1px 2px #000;
+}
+
+
+.btn-cerrar-modal {
+  background: linear-gradient(135deg, #a70000, #e60000);
+  color: white;
+  padding: 12px 24px;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  margin: 30px auto 0;
+  display: block;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff4d4dcc;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-cerrar-modal:hover {
+  background: linear-gradient(135deg, #ff1a1a, #cc0000);
+  transform: scale(1.05);
+}
+
+
+/* Animación tipo Mario Kart Tour */
+.fila-animada {
+  animation: entradaFila 0.5s ease forwards;
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+@keyframes entradaFila {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+.fila-animada {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: aparecerFila 0.5s forwards;
+}
+
+@keyframes aparecerFila {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+
+
+#catalogoTrofeos .grid-catalogo .item img:hover {
+  border-color: gold;
+  box-shadow: 0 0 15px gold;
+}
+
+#catalogoMedallas .grid-catalogo .item img:hover {
+  border-color: #00bfff;
+  box-shadow: 0 0 15px #00bfff;
+}
+
+
+
+
+.catalogo .item img {
+  border: 4px solid transparent;
+  transition: border 0.3s ease, transform 0.3s ease;
+}
+
+.catalogo .item img:hover {
+  border: 4px solid #f39c12;
+  transform: scale(1.07);
+  box-shadow: 0 0 15px 5px #f1c40f;
+}
+.catalogo .item img {
+  border: 4px solid transparent;
+  transition: border 0.3s ease, transform 0.3s ease;
+}
+
+.catalogo .item img:hover {
+  border: 4px solid #f39c12;
+  transform: scale(1.07);
+  box-shadow: 0 0 15px 5px #f1c40f;
+}
+
+
+.catalogo .item img:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  transform: translateY(-5px) scale(1.05);
+  transition: all 0.3s ease;
+}
+
+
+
+/* Estilo general para números de posición */
+/* Asegura que los números de posición usen la fuente y estilo deseado */
+.tabla-posiciones td.posicion {
+  font-family: 'Bungee', sans-serif !important;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Estilo para el 1er lugar (oro) */
+.puesto-1 {
+  color: #FFD700 !important;
+  text-shadow: 0 0 8px #FFD700, 0 0 12px #DAA520, 1px 1px 2px #000;
+}
+
+/* Estilo para el 2do lugar (plata) */
+.puesto-2 {
+  color: #C0C0C0 !important;
+  text-shadow: 0 0 8px #DCDCDC, 0 0 12px #A9A9A9, 1px 1px 2px #000;
+}
+
+/* Estilo para el 3er lugar (bronce) */
+.puesto-3 {
+  color: #CD7F32 !important;
+  text-shadow: 0 0 8px #CD853F, 0 0 12px #8B4513, 1px 1px 2px #000;
+}
+
+
+
+
+
+
+
+.puesto-1::before {
+  content: "👑";
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1em;
+  filter: drop-shadow(0 0 2px black);
+}
+.puesto-2,
+.puesto-3 {
+  font-family: 'Bungee', sans-serif !important;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 2px #000;
+}
+
+
+
+
+.puesto-general {
+  font-family: 'Bungee', sans-serif;
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #fff;
+  /* Sombra negra gruesa para efecto borde */
+  text-shadow:
+    2px 2px 2px #000000cc,
+    -2px 2px 2px #000000cc,
+    2px -2px 2px #000000cc,
+    -2px -2px 2px #000000cc,
+    0 0 5px #222;
+}
+
+/* Colores para top 3 */
+.puesto-1 {
+  color: gold;
+  text-shadow:
+    /* Borde oscuro */
+    2px 2px 4px #000000cc,
+    -2px 2px 4px #000000cc,
+    2px -2px 4px #000000cc,
+    -2px -2px 4px #000000cc,
+    /* Brillo blanco */
+    0 0 8px #ffffffcc,
+    0 0 12px #ffffff99;
+}
+
+.puesto-2 {
+  color: silver;
+  text-shadow:
+    2px 2px 4px #000000cc,
+    -2px 2px 4px #000000cc,
+    2px -2px 4px #000000cc,
+    -2px -2px 4px #000000cc,
+    0 0 8px #ffffffcc,
+    0 0 12px #ffffff99;
+}
+
+.puesto-3 {
+  color: #cd7f32; /* bronce */
+  text-shadow:
+    2px 2px 4px #000000cc,
+    -2px 2px 4px #000000cc,
+    2px -2px 4px #000000cc,
+    -2px -2px 4px #000000cc,
+    0 0 8px #ffffffcc,
+    0 0 12px #ffffff99;
+}
+
+
+/* Fuente para nombres */
+.nombre-jugador {
+  font-family: 'Bungee', sans-serif;
+  font-weight: bold;
+  color: #f0f0f0;
+  text-shadow:
+    2px 2px 2px #000000cc,
+    -2px 2px 2px #000000cc,
+    2px -2px 2px #000000cc,
+    -2px -2px 2px #000000cc,
+    0 0 5px #222;
+}
+
+
+.botones-admin {
+  margin: 20px 0 0 auto;
+  padding-right: 40px;
+  max-width: 1000px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.admin-btn {
+  background: linear-gradient(135deg, #444, #666);
+  color: #eee;
+  border: 2px solid #222;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.25s ease;
+  user-select: none;
+  min-width: 140px;
+}
+
+.admin-btn:hover {
+  background: linear-gradient(135deg, #555, #888);
+  box-shadow: 0 0 10px #fff;
+}
+
+
+
+
+.input-puntos {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  width: 80px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.grupo-envio select,
+.grupo-envio button {
+  padding: 8px 15px;
+  font-size: 16px;
+  color: white;
+  background: linear-gradient(135deg, #e52d27, #b31217); /* rojo degradado */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  appearance: none; /* Para quitar estilos nativos de select en algunos navegadores */
+}
+
+.grupo-envio select {
+  /* Para que el dropdown tenga el mismo ancho mínimo */
+  min-width: 160px;
+}
+
+/* Hover para que cambie ligeramente el color */
+.grupo-envio select:hover,
+.grupo-envio button:hover {
+  background: linear-gradient(135deg, #b31217, #e52d27);
+}
+
+/* Opcional: icono para el select (flecha) con CSS */
+/* Solo si quieres, puedo ayudarte con esto también */
+
+.tabla-posiciones tbody tr:hover {
+  background-color: rgba(255, 36, 0, 0.1);
+  transform: scale(1.01);
+  transition: all 0.2s ease-in-out;
+}
+
+
+.titulo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px; /* espacio entre íconos y texto */
+  margin-bottom: 20px; /* separa del table */
+}
+
+.titulo-icon {
+  width: 80px;
+  height: 80px;
+}
+
+.titulo-icon:hover {
+  animation: hvr-icon-wobble-horizontal 0.6s both;
+}
+
+@keyframes hvr-icon-wobble-horizontal {
+  16.65% { transform: translateX(6px); }
+  33.3%  { transform: translateX(-5px); }
+  49.95% { transform: translateX(4px); }
+  66.6%  { transform: translateX(-2px); }
+  83.25% { transform: translateX(1px); }
+  100%   { transform: translateX(0); }
+}
+
+.tabla-posiciones h2 {
+  margin: 0;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 1.6rem;
+  text-align: center;
+  -webkit-text-stroke: 0.8px black;
+}
+
+@font-face {
+  font-family: 'MarioKartDS';
+  src: url('../fuentes/mario_kart_f2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.tabla-posiciones h2 {
+  font-family: 'MarioKartDS', sans-serif;
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  -webkit-text-stroke: 1px #000;
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(180deg, #b5000b 0%, #e50914 60%, #a10008 100%);
+  box-shadow: 4px 0 20px rgba(165, 0, 0, 0.9);
+  padding: 30px 20px;
+  border-radius: 10px;
+}
+
+nav li {
+  position: relative;
+}
+
+nav a {
+  font-family: 'MarioKartF2', sans-serif;
+  font-size: 1.5rem; /* Tamaño de fuente aumentado */
+  color: white;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Efecto de sombreado en tonos rojos */
+nav a:hover {
+  background-color: #8b0000; /* Rojo oscuro */
+  box-shadow: 0 0 15px rgba(139, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+
+
+
+
+
+
+.mensaje-vacio {
+  text-align: center;
+  color: #aaa;
+  font-size: 1rem;
+  padding: 10px;
+  font-style: italic;
+}
+.img-trofeo-en-juego {
+  max-width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+.nombre-trofeo {
+  text-align: center;
+  margin-top: 8px;
+  font-weight: bold;
+  color: #fff;
+}
+
+
+
+@font-face {
+  font-family: 'Mario Kart F2';
+  src: url('../fuentes/mario_kart_f2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.trofeo-actual {
+  width: 280px;
+  height: 340px;
+  background: rgba(0, 0, 0, 0.75); /* fondo negro semitransparente */
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 0 25px rgba(255, 36, 0, 0.3); /* sombra roja suave */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px); /* difuminado como la tabla */
+  border: 2px solid #e50914; /* borde rojo como tabla */
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  overflow: hidden;
+}
+
+.trofeo-actual h2 {
+  font-family: 'Mario Kart F2', sans-serif;
+  font-size: 1.1rem;
+  color: #ffffff; /* texto blanco sin brillo */
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: none; /* quita cualquier sombra o brillo */
+  margin-bottom: 10px;
+  user-select: none;
+  letter-spacing: 0.05em;
+  white-space: normal;
+  max-width: 180px;
+  line-height: 1.2;
+  margin-left: auto;
+  margin-right: auto;
+ -webkit-text-stroke: 1px #000;
+  text-stroke: 1px #000;
+
+}
+
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f0f0f0;
+}
+
+body, html {
+  height: 100%;
+  background: #111;
+  overflow-x: hidden;
+}
+
+.contenido-principal {
+  margin-left: 300px;
+  min-height: 100vh;
+  background: url('../img/5.webp') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 20px 40px;
+  overflow-y: auto;
+  background-color: transparent;
+  backdrop-filter: none;
+}
+
+/* ...estilos existentes... */
+
+.menu-lateral {
+  background: linear-gradient(180deg, #b5000b 0%, #e50914 60%, #a10008 100%);
+  box-shadow: 4px 0 20px rgba(165, 0, 0, 0.9);
+  padding: 30px 20px;
+  width: 300px;
+  height: 90vh;       /* Ocupa el 90% de la altura visible */
+  max-height: 800px;  /* Pero no más de 800px */
+  min-height: 980px;  /* Ni menos de 600px */
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: visible;  
+  z-index: 10;
+}
+
+.menu-lateral h2 {
+  color: #fff;
+  text-shadow: 0 0 10px #a5000acc;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 25px;
+
+  /* Nuevo espaciado extra */
+  margin-bottom: 30px;
+}
+
+/* RESET Y CONFIGURACIÓN GENERAL */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f0f0f0;
+}
+
+body, html {
+  height: 100%;
+  background: #111;
+  overflow-x: hidden;
+}
+
+.contenido-principal::-webkit-scrollbar {
+  width: 10px;
+}
+.contenido-principal::-webkit-scrollbar-track {
+  background: transparent;
+}
+.contenido-principal::-webkit-scrollbar-thumb {
+  background-color: #ff2400cc;
+  border-radius: 5px;
+}
+
+/* MENÚ LATERAL */
+.menu-lateral a {
+  font-size: 1.4rem;
+  color: #f5f5f5;
+  padding: 16px 20px;
+  border-radius: 10px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.menu-lateral a:hover {
+  background-color: #8b0000;
+  box-shadow: 0 0 10px #8b0000cc;
+  color: #fff;
+}
+
+/* ENCABEZADO DE TORNEO */
+.header-torneo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+  text-shadow: 0 0 10px #ff2400cc;
+}
+
+/* CAMPEONES */
+.campeones-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.card-campeon {
+  flex: 1;
+  background: rgba(17, 17, 17, 0.75);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 15px #ff240033;
+  font-weight: 700;
+  font-size: 1.2rem;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffa07a;
+  user-select: none;
+}
+
+/* SECCIÓN PRINCIPAL */
+.principal-row {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* TABLA DE POSICIONES */
+.tabla-posiciones {
+  flex: 1 1 600px;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 16px;
+  padding: 20px;
+  border: 2px solid #e50914;
+  box-shadow: 0 0 25px rgba(255, 36, 0, 0.3);
+  backdrop-filter: blur(3px);
+  color: #f5f5f5;
+  transition: all 0.3s ease-in-out;
+}
+
+.tabla-posiciones h2 {
+  font-family: 'MarioKartDS', sans-serif;
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+  -webkit-text-stroke: 1px #000;
+  margin-bottom: 20px;
+}
+
+.tabla-posiciones table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.tabla-posiciones th,
+.tabla-posiciones td {
+  padding: 12px 10px;
+  text-align: center;
+  border-bottom: 1px solid rgba(80, 80, 100, 0.3);
+  color: #eee;
+}
+
+.tabla-posiciones th {
+  border-bottom: 2px solid #e50914;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.tabla-posiciones tr:nth-child(even) {
+  background: rgba(40, 45, 65, 0.3);
+}
+
+.tabla-posiciones tbody td,
+.tabla-posiciones thead th {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.tabla-posiciones tbody tr {
+  line-height: 1.2;
+  transition: all 0.2s ease-in-out;
+}
+
+.tabla-posiciones tbody tr:hover {
+  background-color: rgba(255, 36, 0, 0.1);
+  transform: scale(1.01);
+}
+
+
+
+/*maximo campeon / campeon actual y redord maximo*/
+
+#campeon-actual, #maximo-campeon, #record-puntos {
+  position: relative;
+  width: 150px;
+  height: 230px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 15px;
+  background-size: cover;
+  background-position: center;
+  text-align: left;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  gap: 15px; /* Espacio entre avatar y texto */
+}
+
+/* Oscurecer menos */
+#campeon-actual::before,
+#maximo-campeon::before,
+#record-puntos::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* menos oscuro */
+  z-index: 0;
+}
+
+/* Capa superior */
+#campeon-actual > *, #maximo-campeon > *, #record-puntos > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Avatar */
+.avatar-box img {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: linear-gradient(145deg, #1c1c1c, #2a2a2a);
+  padding: 5px;
+  box-shadow: inset 0 0 5px #000, 0 0 8px #000;
+}
+
+/* Info */
+.info-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Alineado a la izquierda del bloque */
+  flex: 1;
+  height: 100%;
+}
+
+
+.nombre-con-emoji {
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow:
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.mensaje-jugador {
+  font-size: 1rem;
+  color: #fff;
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+
+/* Bordes por jugador (ya los tienes) */
+
+
+.header-torneo {
+  background-color: rgba(0, 0, 0, 0.85); /* Fondo oscuro casi opaco */
+  color: white;                          /* Letras blancas */
+  padding: 20px;
+  text-align: center;
+  font-size: 2.8rem;
+  margin: 20px auto;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 800px;
+  border: 2px solid #000;               /* Borde negro */
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;                  /* Borde negro en texto */
+  
+  /* Brillo blanco alrededor del borde negro */
+  box-shadow:
+    0 0 8px 2px rgba(255, 255, 255, 0.8);
+
+  letter-spacing: 1px;
+}
+
+
+.titulo-torneo {
+  color: #f6d700 !important; /* amarillo vivo */
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.texto-tipo-torneo {
+  color: white !important;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.subtitulo-torneo {
+  color: #f6d700 !important; /* igual que el título */
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+
+#modalCrearTorneo .modal-content,
+#modalPerfiles .modal-content,
+#modalReglasContent.modal-content {
+  background-image: url('../img/speed.avif'); /* ✅ ruta correcta desde podio.html */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  box-shadow: 0 0 20px #ffffff88;
+  border-radius: 15px;
+  color: white;
+}
+
+
+
+
+
+
+//animacion imagenes//
+
+
+.imagen-ciclo {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.imagen-ciclo img {
+  width: 140px;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  box-shadow: 0 0 15px #ffffff80;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#imagenAnimada {
+  display: block;
+  margin-top: 30px; /* puedes ajustar este valor para más espacio */
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;          /* elimina cualquier borde */
+  box-shadow: none;      /* elimina cualquier sombra si existiera */
+}
+
+
+@media (max-width: 1366px) {
+  body {
+    transform: scale(0.76);
+    transform-origin: top left;
+    width: 1800px;
+    height: auto;
+    overflow-x: hidden;
+  }
+}
+
+
+
+
+
+
+@media (max-width: 1366px) {
+  .modal {
+    transform: scale(1.25); /* Inverso a scale(0.80) del body para compensar */
+    transform-origin: top left;
+    width: 80%;             /* 100% / 1.25 ≈ 80% para ajustarse al body escalado */
+    height: auto;
+    left: 0;
+    top: 0;
+  }
+
+  .modal-content {
+    max-height: calc(100vh * 1.30); /* Aún con scroll interno si el contenido es largo */
+    overflow-y: auto;
+  }
+}
+
+
+
+
+.botones-admin {
+  display: none; /* Ocultamos la sección de botones de admin por defecto */
+}
+
+
+
+
+

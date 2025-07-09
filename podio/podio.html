@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perfil Base</title>
+  <link rel="stylesheet" href="styles/podio.css" />
+</head>
+<body>
+  
+ 
+  <nav class="menu-lateral">
+    <h2>Mario Kart</h2>
+    <ul>
+      <li><a href="../index.html">🏟️ Inicio</a></li>
+      <li><a href="#" id="menuPerfiles">👤 Perfiles</a></li>
+      <li><a href="#">🏆 Podio</a></li>
+         </ul>
+
+
+ <div class="imagen-ciclo">
+      <img id="imagenAnimada" src="../img/trofeos--.png" alt="Banner animado" />
+    </div>
+  </nav>
+
+
+  </nav>
+
+  <section class="contenido-principal">
+    <div class="perfil-container">
+      <section class="titulo-seccion">
+        <h1>Podio y Tabla de Jugadores</h1>
+      </section>
+
+      <section class="podio">
+        <article class="puesto puesto-1" data-jugador="Yahir">
+          <div class="posicion">1</div>
+          <img src="../img/yoshi.png" alt="Yahir" class="avatar" />
+          <div class="nombre">Yahir</div>
+          <div class="stats">
+            <span class="contador-trofeos" data-jugador="Yahir">🏆 <span class="valor">0</span></span>
+            <span class="contador-especiales" data-jugador="Yahir">✨ <span class="valor">0</span></span>
+            <span class="contador-medallas" data-jugador="Yahir">🏅 <span class="valor">0</span></span>
+          </div>
+        </article>
+
+        <article class="puesto puesto-2" data-jugador="Carlos">
+          <div class="posicion">2</div>
+          <img src="../img/flor-.png" alt="Carlos" class="avatar" />
+          <div class="nombre">Carlos</div>
+          <div class="stats">
+            <span class="contador-trofeos" data-jugador="Carlos">🏆 <span class="valor">0</span></span>
+            <span class="contador-especiales" data-jugador="Carlos">✨ <span class="valor">0</span></span>
+            <span class="contador-medallas" data-jugador="Carlos">🏅 <span class="valor">0</span></span>
+          </div>
+        </article>
+
+        <article class="puesto puesto-3" data-jugador="Cris">
+          <div class="posicion">3</div>
+          <img src="../img/toad.png" alt="Cris" class="avatar" />
+          <div class="nombre">Cris</div>
+          <div class="stats">
+            <span class="contador-trofeos" data-jugador="Cris">🏆 <span class="valor">0</span></span>
+            <span class="contador-especiales" data-jugador="Cris">✨ <span class="valor">0</span></span>
+            <span class="contador-medallas" data-jugador="Cris">🏅 <span class="valor">0</span></span>
+          </div>
+        </article>
+      </section>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Jugador</th>
+            <th>Trofeos</th>
+            <th>Especiales</th>
+            <th>Medallas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-jugador="Héctor">
+            <td class="posicion">4</td>
+            <td class="avatar-cell"><img src="../img/bowser-.png" alt="Héctor" /> Héctor</td>
+            <td class="trofeos">0</td>
+            <td class="especiales">0</td>
+            <td class="medallas">0</td>
+          </tr>
+          <tr data-jugador="Manuel">
+            <td class="posicion">5</td>
+            <td class="avatar-cell"><img src="../img/mario.png" alt="Manuel" /> Manuel</td>
+            <td class="trofeos">0</td>
+            <td class="especiales">0</td>
+            <td class="medallas">0</td>
+          </tr>
+          <tr data-jugador="Ricardo">
+            <td class="posicion">6</td>
+            <td class="avatar-cell"><img src="../img/avatar-ricardo.png" alt="Ricardo" /> Ricardo</td>
+            <td class="trofeos">0</td>
+            <td class="especiales">0</td>
+            <td class="medallas">0</td>
+          </tr>
+          <tr data-jugador="Pablo">
+            <td class="posicion">7</td>
+            <td class="avatar-cell"><img src="../img/dk-.png" alt="Pablo" /> Pablo</td>
+            <td class="trofeos">0</td>
+            <td class="especiales">0</td>
+            <td class="medallas">0</td>
+          </tr>
+          <tr data-jugador="Raúl">
+            <td class="posicion">8</td>
+            <td class="avatar-cell"><img src="../img/mi-.png" alt="Raúl" /> Raúl</td>
+            <td class="trofeos">0</td>
+            <td class="especiales">0</td>
+            <td class="medallas">0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+ <!-- Modal Perfiles -->
+  <div id="modalPerfiles" class="modal">
+    <div class="modal-contenido">
+      <h2>Perfiles de Jugadores</h2>
+      <div class="lista-perfiles">
+        <div class="item"><a href="../perfiles/carlos/carlos.html"><img src="../img/flor-.png" alt="Carlos" class="perfil-img borde-carlos" /><p>Carlos</p></a></div>
+        <div class="item"><a href="../perfiles/cris/cris.html"><img src="../img/toad.png" alt="Cris" class="perfil-img borde-cris" /><p>Cris</p></a></div>
+        <div class="item"><a href="../perfiles/hector/hector.html"><img src="../img/bowser-.png" alt="Héctor" class="perfil-img borde-hector" /><p>Héctor</p></a></div>
+        <div class="item"><a href="../perfiles/manuel/manuel.html"><img src="../img/mario.png" alt="Manuel" class="perfil-img borde-manuel" /><p>Manuel</p></a></div>
+        <div class="item"><a href="../perfiles/ricardo/ricardo.html"><img src="../img/avatar-ricardo.png" alt="Ricardo" class="perfil-img borde-ricardo" /><p>Ricardo</p></a></div>
+        <div class="item"><a href="../perfiles/pablo/pablo.html"><img src="../img/dk-.png" alt="Pablo" class="perfil-img borde-pablo" /><p>Pablo</p></a></div>
+        <div class="item"><a href="../perfiles/raul/raul.html"><img src="../img/mi-.png" alt="Raúl" class="perfil-img borde-raul" /><p>Raúl</p></a></div>
+        <div class="item"><a href="../perfiles/yahir/yahir.html"><img src="../img/yoshi.png" alt="Yahir" class="perfil-img borde-yahir" /><p>Yahir</p></a></div>
+      </div>
+      <button id="cerrarModalPerfiles" class="btn-cerrar-modal">Cerrar</button>
+    </div>
+  </div>
+
+
+
+
+
+  <script src="js/podio.js"></script>
+</body>
+</html>
